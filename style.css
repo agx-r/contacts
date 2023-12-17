@@ -77,7 +77,7 @@ a span:nth-child(1){
     width: 100%;
     height: 2px;
     background: linear-gradient(90deg,transparent,#ff2222);
-    animation: animate1 2s linear infinite;
+    animation: animate1 1s linear infinite;
 }
 @keyframes animate1{
     0%{
@@ -93,8 +93,8 @@ a span:nth-child(2){
     width: 2px;
     height: 100%;
     background: linear-gradient(180deg,transparent,#ff2222);
-    animation: animate2 2s linear infinite;
-    animation-delay: 0.5s;
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
 }
 @keyframes animate2{
     0%{
@@ -110,8 +110,7 @@ a span:nth-child(3){
     width: 100%;
     height: 2px;
     background: linear-gradient(270deg,transparent,#ff2222);
-    animation: animate3 2s linear infinite;
-    animation-delay: 1s;
+    animation: animate3 1s linear infinite;
 }
 @keyframes animate3{
     0%{
@@ -129,8 +128,8 @@ a span:nth-child(4){
     width: 2px;
     height: 100%;
     background: linear-gradient(360deg,transparent,#ff2222);
-    animation: animate4 2s linear infinite;
-    animation-delay: 1.5s;
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.25s;
 }
 @keyframes animate4{
     0%{
