@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+.me {
+  mix-blend-mode: color-dodge;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  display: block;
+  margin: 2em auto;
+  margin-bottom: 3em;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.center-div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+
+/*------------------------------------*/
+/*------------------------------------*/
+/*------------------------------------*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #050000;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+a{
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 25px 30px;
+    color: #ff0000;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 10%;
+}
+a:hover{
+    background: #ff1111;
+    color: #050000;
+    box-shadow: 0 0 5px #ff1111,
+                0 0 25px #ff1111,
+                0 0 50px #ff1111,
+                0 0 200px #ff1111;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #050000);
+}
+a span{
+    position: absolute;
+    display: block;
+}
+a:last-child {
+    margin-right: 0;
+}
+a span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#ff2222);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#ff2222);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+a span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#ff2222);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#ff2222);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+
+
+/*------------------------------------*/
+/*------------------------------------*/
+/*------------------------------------*/
+
+
+
+
+
+:root{
+  --gird-width:30px;
+  --gird-height:30px;
+  --line-color:#a00;
+  --dot-color:#fff;
+  --dot-size:3px;
+  --point-gap-width:calc(var(--gird-width) * 4);
+  --point-gap-height:calc(var(--gird-height) * 4);
+}
+html,body{
+  font-family: "Roboto Slab", serif;
+  width:100%;
+  height: 100%;
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.grid-bg{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ba-grid{
+  position: relative;
+  z-index: 1;
+  
+  background-image: 
+    radial-gradient(ellipse at bottom left, rgba(6,0,0,0.4) 10%, rgba(5,0,0,0) 40%),
+    linear-gradient(to bottom, rgba(6,0,0,.25), rgba(9,0,0,0.4)),
+    linear-gradient(135deg, #000000, #330000);
+}
+
+
+.ba-grid:before,
+.ba-grid:after,
+.inner:before,
+.inner:after{
+  content:'';
+  position: absolute;
+  z-index: 1;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  mix-blend-mode: overlay;
+}
+
+.ba-grid:before{
+  background-image: 
+    linear-gradient(var(--line-color), transparent 1px),
+    linear-gradient(to right, var(--line-color), transparent 1px);
+  background-size:
+    100% var(--gird-height),
+    var(--gird-width) 100%;
+}
+
+.ba-grid:after{
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: var(--point-gap-width) var(--point-gap-height);
+  background-position: calc(var(--point-gap-width) / 2) calc(var(--point-gap-height) / 2);
+}
+
+
+
+.inner:before,
+.inner:after{
+  background-image: radial-gradient(var(--dot-color) var(--dot-size), transparent var(--dot-size));
+  background-size: var(--point-gap-width) var(--point-gap-height);
+  background-position: calc(var(--point-gap-width) / 2) calc(var(--point-gap-height) / 2);  
+
+}
+
+.inner:after{
+  
+  transform: scale(1.1, 1.1);
+}
+
+.inner:before{
+  transform: scale(1.2, 1.2);
+}
+
+.anim:after{
+  animation: 6.4s linear move infinite;
+}
+
+.anim .inner:after{
+  animation: 3.2s linear move infinite;
+}
+
+.anim .inner:before{
+  animation: 1.6s linear move infinite;
+}
+
+@keyframes move{
+  0%{
+    background-position:calc(var(--point-gap-width) / 2) calc(var(--point-gap-height) / 2);
+  }
+  100%{
+    background-position:calc(var(--point-gap-width) / 2) calc(var(--point-gap-height) / 2 * -1);
+  }
+}
+
+
+
+
+@media screen and (max-width: 1400px) {
+  .center-div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  a {
+    margin-right: 0;
+  }
+}
